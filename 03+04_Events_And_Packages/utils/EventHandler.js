@@ -16,10 +16,10 @@ class EventHandler extends EventEmitter {
     this.instance.on(name, callback);
   }
 
-  static RunEvent(name, params = {}) {
+  static RunEvent(name, params = []) {
     this.instance = EventHandler.CreateInstance();
 
-    this.instance.emit(name, params);
+    this.instance.emit(name, params.join('\t'));
   }
 
 }

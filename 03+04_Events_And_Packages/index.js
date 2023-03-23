@@ -16,13 +16,14 @@ async function Main() {
   // }, 1000 * 5);
 
 
-  EventHandler.CreateEvent('SQL_ERR', (n, msg) => { console.log(msg, n) });
+  EventHandler.CreateEvent('SQL_ERR', (msg) => { console.log(msg) });
+
 
 
   //מדמה את הפעלת האירוע כל פרק זמן מסויים
   setInterval(() => {
     //הפעלת האירוע עצמו
-    EventHandler.RunEvent('SQL_ERR', {n: Math.random(), msg: 'connection error'});
+    EventHandler.RunEvent('SQL_ERR', [Math.random(), 'connection error']);
   }, 1000 * 2);
 }
 
