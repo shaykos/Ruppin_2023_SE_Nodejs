@@ -4,15 +4,10 @@ class DB {
 
   static sqlConfig = 
     {
-      server: 'sql.bsite.net\MSSQL2016',
+      server: 'sql.bsite.net\\MSSQL2016',
       user: 'piso_Legends',
       password: 'piso',
-      database: 'Legends',
-      pool: {
-        max: 10,
-        min: 0,
-        idleTimeoutMillis: 30000
-      },
+      database: 'piso_Legends',
       options: {
         encrypt: false,
         enableArithAbort: true,
