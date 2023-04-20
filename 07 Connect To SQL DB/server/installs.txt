@@ -1,0 +1,17 @@
+התקנת pnpm
+npm i pnpm -g
+
+יצירת פרויקט חדש
+pnpm init
+
+התקנת epxrss
+pnpm i express
+
+התקנת mssql
+pnpm i mssql 
+
+התקנת nodemon
+pnpm i nodemon -D
+
+התקנת env
+pnpm i dotenv
