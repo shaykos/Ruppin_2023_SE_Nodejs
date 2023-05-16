@@ -4,7 +4,7 @@ class DB {
 
     client;
     dbName; // לא חובה
-
+ 
     constructor() {
         this.client = new MongoClient('');
         this.dbName = '';
