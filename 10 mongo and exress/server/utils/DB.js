@@ -4,10 +4,10 @@ class DB {
 
     client;
     dbName; // לא חובה
- 
+
     constructor() {
-        this.client = new MongoClient('');
-        this.dbName = '';
+        this.client = new MongoClient(process.env.DB_URI);
+        this.dbName = process.env.DB_NAME;
     }
 
 
