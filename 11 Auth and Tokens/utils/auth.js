@@ -15,6 +15,8 @@ function AuthUser(req, res, next) {
 
 function RefreshToken(req, res, next) {
   let { refreshToken } = req.body;
+  if(!refreshToken) return res.sendStatus(401);
+
   
   let authHeader = req.headers['authorization'];
   let token = authHeader?.split(' ')[1];
@@ -28,4 +30,4 @@ function RefreshToken(req, res, next) {
   });
 }
 
-module.exports = { AuthUser }
+module.exports = { AuthUser, RefreshToken }
