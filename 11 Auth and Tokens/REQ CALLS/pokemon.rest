@@ -1,0 +1,64 @@
+
+GET http://localhost:5500/api/pokemon/
+
+###
+
+POST http://localhost:5500/api/pokemon/add/pokemon
+Content-Type: application/json
+
+{
+    "pokemons":{
+        "name":"Charmander",
+        "family":"Fire",
+        "level":1,
+        "attacks": [
+            {"name":"Fire ball", "damage":3},
+            {"name":"Tail Slash", "damage":5}
+        ]
+    }
+}
+
+### 
+POST http://localhost:5500/api/pokemon/add/pokemon
+Content-Type: application/json
+
+{
+    "pokemons":[
+        {
+            "name":"Balbazoar",
+            "family":"Grass",
+            "level":1,
+            "attacks": [
+                {"name":"Tornado", "damage":2},
+                {"name":"Wheeplash", "damage":4}
+            ]
+        },
+        {
+            "name":"Squirtle",
+            "family":"Water",
+            "level":1,
+            "attacks": [
+                {"name":"Water Gun", "damage":2},
+                {"name":"Bubbles", "damage":4}
+            ]
+        }
+    ]
+}
+
+###
+
+GET http://localhost:5500/api/pokemon/find/Fire
+
+###
+GET http://localhost:5500/api/pokemon/find/Water
+
+###
+DELETE http://localhost:5500/api/pokemon/delete/6481807b1e6c7d6bd088f5d5
+
+
+###
+PUT http://localhost:5500/api/pokemon/active/648185b85d4f95f0fbe0f3e7
+###
+PUT http://localhost:5500/api/pokemon/active/648185b85d4f95f0fbe0f3e8
+
+
