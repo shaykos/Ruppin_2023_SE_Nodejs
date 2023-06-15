@@ -11,22 +11,32 @@ export default function UploadWidget() {
     WidgetRef.current = CloudinaryRef.current.createUploadWidget({
       cloudName: 'shaykos',
       uploadPreset: 'ruppin'
-    }, (err, res) => {
-      if (err) return;
-      console.log('res =>', res);
-      if(res.info?.url)
-        SetImgSrc(res.info.url)
-        console.log('res.info.url',res.info.url);
-    })
+    }, HandleWidget)
+  }
+
+  function HandleWidget(err, res) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    if (res.event == "success" && res.info?.url) {
+      SetImgSrc(res.info.url)
+      console.log('res.info.url', res.info.url);
+      WidgetRef.current.close();
+    }
   }
 
   useEffect(() => {
-    CreateCloudiaryRef();
+    if (!CloudinaryRef.current) {
+      console.count('ref')
+      CreateCloudiaryRef();
+    }
   }, [])
 
   return (
     <>
-      <button onClick={()=>WidgetRef.current.open()}>Upload</button>
+      <button onClick={() => WidgetRef.current.open()}>Upload</button><br/>
+      {imgSrc && <img src={imgSrc} style={{width:"100px", aspectRatio:1}}/> }
     </>
   )
 
